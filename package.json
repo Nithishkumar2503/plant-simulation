@@ -1,0 +1,19 @@
+{
+  "name": "plant-simulation-engine",
+  "version": "1.0.0",
+  "description": "Production-grade plant growth simulation engine",
+  "private": true,
+  "workspaces": [
+    "packages/server",
+    "packages/client"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev -w packages/server\" \"npm run dev -w packages/client\"",
+    "build": "npm run build -w packages/server && npm run build -w packages/client",
+    "start": "npm start -w packages/server",
+    "type-check": "npm run type-check -w packages/server && npm run type-check -w packages/client"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
